@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_medihelp/Presentation/View/Home/home_main.dart';
 import 'package:project_medihelp/Presentation/View/Onboradscreen/on_borad_screen.dart';
 
 void main() {
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MediHelp',
-      home: OnBoradScreen(),
+      //home: OnBoradScreen(),
+      home: HomeMain(),
     );
   }
 }
