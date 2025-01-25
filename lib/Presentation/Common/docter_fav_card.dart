@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 
-class DoctorCart extends StatefulWidget {
+class DoctorFavCart extends StatefulWidget {
   final String docName;
   final String positionName;
   final String imgUrl;
   final int favAmount;
   final int commAmount;
 
-  const DoctorCart({
+  const DoctorFavCart({
     super.key,
     required this.docName,
     required this.positionName,
@@ -18,10 +18,10 @@ class DoctorCart extends StatefulWidget {
   });
 
   @override
-  State<DoctorCart> createState() => _DoctorCartState();
+  State<DoctorFavCart> createState() => _DoctorFavCartState();
 }
 
-class _DoctorCartState extends State<DoctorCart> {
+class _DoctorFavCartState extends State<DoctorFavCart> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -86,30 +86,6 @@ class _DoctorCartState extends State<DoctorCart> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        width: 50,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: kWhirt),
-                        child: Center(
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.star,
-                                size: 20,
-                                color: kMainColor,
-                              ),
-                              Text(
-                                widget.favAmount.toString(),
-                                style: TextStyle(
-                                  color: kMainColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                       SizedBox(
                         width: 5,
                       ),
@@ -140,29 +116,11 @@ class _DoctorCartState extends State<DoctorCart> {
                     ],
                   ),
                   SizedBox(
-                    width: 50,
+                    width: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        width: 40,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(100),
-                            color: kWhirt),
-                        child: Center(
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.question_mark_rounded,
-                                size: 20,
-                                color: kMainColor,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
                       SizedBox(
                         width: 5,
                       ),

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/doctorcrad.dart';
 import 'package:project_medihelp/Presentation/Common/search_bar.dart';
+import 'package:project_medihelp/Presentation/View/DoctetInfor/doctor_infor_page.dart';
+import 'package:project_medihelp/Presentation/View/Home/doctor_fav_page.dart';
+import 'package:project_medihelp/Presentation/View/Home/doctor_page.dart';
+import 'package:project_medihelp/Presentation/View/News.dart/news_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -89,7 +93,12 @@ class _HomeState extends State<Home> {
                             ],
                           ),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => NewsPage()));
+                            },
                             icon: Icon(
                               Icons.notification_add,
                               color: kMainColor,
@@ -109,12 +118,20 @@ class _HomeState extends State<Home> {
                         children: [
                           Column(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(100),
-                                child: Image.asset(
-                                  "assets/img/doctor_icon.png",
-                                  width: 60,
-                                  fit: BoxFit.cover,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => DoctorPage()));
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: Image.asset(
+                                    "assets/img/doctor_icon.png",
+                                    width: 60,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                               Text(
@@ -129,12 +146,21 @@ class _HomeState extends State<Home> {
                           ),
                           Column(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(100),
-                                child: Image.asset(
-                                  "assets/img/doctor_fav_icon.png",
-                                  width: 60,
-                                  fit: BoxFit.cover,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              DoctorFavPage()));
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: Image.asset(
+                                    "assets/img/doctor_fav_icon.png",
+                                    width: 60,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                               Text(
@@ -164,12 +190,60 @@ class _HomeState extends State<Home> {
               //Doctors crad
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DoctorInforPage()));
+                  },
+                  child: DoctorCart(
+                    docName: 'Dr. Alexander Bennett, Ph.D.',
+                    positionName: 'Dermato-Genetics',
+                    imgUrl: 'assets/img/doc-menN.png',
+                    favAmount: 5,
+                    commAmount: 60,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DoctorCart(
+                  docName: 'Dr. Alexander Bennett, Ph.D.',
+                  positionName: 'Dermato-Genetics',
+                  imgUrl: 'assets/img/doc-women.png',
+                  favAmount: 2,
+                  commAmount: 20,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: DoctorCart(
                   docName: 'Dr. Alexander Bennett, Ph.D.',
                   positionName: 'Dermato-Genetics',
                   imgUrl: 'assets/img/doc-menN.png',
+                  favAmount: 4,
+                  commAmount: 10,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DoctorCart(
+                  docName: 'Dr. Alexander Bennett, Ph.D.',
+                  positionName: 'Dermato-Genetics',
+                  imgUrl: 'assets/img/doc-women.png',
                   favAmount: 5,
                   commAmount: 60,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DoctorCart(
+                  docName: 'Dr. Alexander Bennett, Ph.D.',
+                  positionName: 'Dermato-Genetics',
+                  imgUrl: 'assets/img/doc-menN.png',
+                  favAmount: 3,
+                  commAmount: 5,
                 ),
               ),
             ],
