@@ -59,7 +59,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(100),
                             child: Image.asset(
-                              "assets/img/doc-menN.png",
+                              "assets/docImg/r-men_doc.jpg",
                               width: 160,
                               fit: BoxFit.cover,
                             ),
@@ -131,12 +131,12 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                   padding: const EdgeInsets.all(20),
                                   child: Center(
                                     child: Text(
-                                      "Focus: The impact of hormonal imbalances on skin conditions, specializing in acne, hirsutism, and other skin disorders.",
+                                      "Heart conditions such as coronary artery disease, hypertension, arrhythmias, and heart failure.",
                                       style: GoogleFonts.prata(
                                         textStyle: TextStyle(
                                           color: kWhirt,
                                           fontSize: 14,
-                                          fontWeight: FontWeight.w700,
+                                          fontWeight: FontWeight.w400,
                                         ),
                                       ),
                                       textAlign: TextAlign.justify,
@@ -164,7 +164,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                             child: Column(
                               children: [
                                 Text(
-                                  "Dr. Alexander Bennett, Ph.D.",
+                                  "Dr. Rajesh Malhotra",
                                   style: GoogleFonts.prata(
                                     textStyle: TextStyle(
                                       color: kMainColor,
@@ -174,7 +174,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                   ),
                                 ),
                                 Text(
-                                  "Dermato-Genetics",
+                                  "Cardiologist",
                                   style: TextStyle(
                                     color: kBlack,
                                     fontSize: 14,
@@ -348,67 +348,11 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                     height: 10,
                   ),
                   Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    style: GoogleFonts.underdog(
-                      textStyle: TextStyle(
-                        color: kBlack,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    "career path",
-                    style: GoogleFonts.prata(
-                      textStyle: TextStyle(
-                        color: kMainColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    style: GoogleFonts.underdog(
-                      textStyle: TextStyle(
-                        color: kBlack,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Text(
-                    "highlights",
-                    style: GoogleFonts.prata(
-                      textStyle: TextStyle(
-                        color: kMainColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    style: GoogleFonts.underdog(
-                      textStyle: TextStyle(
-                        color: kBlack,
-                        fontSize: 15,
-                        fontWeight: FontWeight.w400,
-                      ),
+                    "Dr. Rajesh Malhotra is a highly experienced cardiologist specializing in the diagnosis and treatment of heart conditions such as coronary artery disease, hypertension, arrhythmias, and heart failure. With over 15 years of experience, he is known for his expertise in interventional cardiology, including angioplasty and pacemaker implantation. Dr. Malhotra holds an MBBS, MD (Internal Medicine), and DM (Cardiology) and is a Fellow of the American College of Cardiology (FACC). His contributions to cardiovascular research include over 20 published papers in renowned medical journals.",
+                    style: TextStyle(
+                      color: kBlack,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
                     ),
                     textAlign: TextAlign.justify,
                   ),

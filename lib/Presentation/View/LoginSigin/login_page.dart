@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 15,
                 ),
                 Text(
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+                  "Welcome to MediHelp! Easily book doctor appointments, access trusted healthcare services, and manage your medical needs—all in one app. Simplify your health journey today!",
                   style: TextStyle(
                       color: kBlack, fontWeight: FontWeight.w400, fontSize: 15),
                   textAlign: TextAlign.justify,

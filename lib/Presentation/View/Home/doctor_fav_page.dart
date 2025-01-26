@@ -61,9 +61,9 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-women.png',
+                docName: ' Dr. Rajesh Malhotra ',
+                positionName: 'Cardiologist',
+                imgUrl: 'assets/docImg/r-men_doc.jpg',
                 favAmount: 5,
                 commAmount: 60,
               ),
@@ -71,9 +71,10 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                docName: 'Dr. Meera Sinha',
+                positionName: 'Neurologist',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_43877ef0.jpg',
                 favAmount: 5,
                 commAmount: 25,
               ),
@@ -81,9 +82,10 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-women.png',
+                docName: 'Dr. Kavita Deshmukh',
+                positionName: 'Oncologist',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_a04e7677.jpg',
                 favAmount: 5,
                 commAmount: 35,
               ),
@@ -91,9 +93,10 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                docName: 'Dr. Sameer Gupta',
+                positionName: 'Pediatrician',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.45_b03a7d7f.jpg',
                 favAmount: 5,
                 commAmount: 10,
               ),
@@ -101,9 +104,10 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-women.png',
+                docName: 'Dr. Priya Kapoor',
+                positionName: 'Dermatologist',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.47_19b46847.jpg',
                 favAmount: 5,
                 commAmount: 5,
               ),
@@ -113,7 +117,8 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
               child: DoctorFavCart(
                 docName: 'Dr. Alexander Bennett, Ph.D.',
                 positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.47_c011261c.jpg',
                 favAmount: 5,
                 commAmount: 9,
               ),

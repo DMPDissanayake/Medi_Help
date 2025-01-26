@@ -61,9 +61,9 @@ class _DoctorPageState extends State<DoctorPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                docName: 'Dr. Rajesh Malhotra',
+                positionName: 'Cardiologist',
+                imgUrl: 'assets/docImg/r-men_doc.jpg',
                 favAmount: 5,
                 commAmount: 60,
               ),
@@ -71,19 +71,21 @@ class _DoctorPageState extends State<DoctorPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-women.png',
-                favAmount: 5,
-                commAmount: 60,
+                docName: 'Dr. Meera Sinha',
+                positionName: 'Neurologist',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_43877ef0.jpg',
+                favAmount: 2,
+                commAmount: 20,
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                docName: ' Dr. Arvind Kapoor ',
+                positionName: 'Orthopedic Surgeon',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_a04e7677.jpg',
                 favAmount: 4,
                 commAmount: 10,
               ),
@@ -91,9 +93,10 @@ class _DoctorPageState extends State<DoctorPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: DoctorCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-women.png',
+                docName: 'Dr. Kavita Deshmukh',
+                positionName: 'Oncologist',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.45_b03a7d7f.jpg',
                 favAmount: 5,
                 commAmount: 60,
               ),
@@ -102,8 +105,9 @@ class _DoctorPageState extends State<DoctorPage> {
               padding: const EdgeInsets.all(8.0),
               child: DoctorCart(
                 docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                positionName: 'Pediatrician',
+                imgUrl:
+                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.46_d96b368f.jpg',
                 favAmount: 3,
                 commAmount: 5,
               ),

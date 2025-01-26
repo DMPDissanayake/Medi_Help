@@ -56,7 +56,7 @@ class _DoctorFavCartState extends State<DoctorFavCart> {
                   color: kWhirt,
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       widget.docName,

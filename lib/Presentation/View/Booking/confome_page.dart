@@ -46,9 +46,9 @@ class _ConfomePageState extends State<ConfomePage> {
                 height: 20,
               ),
               DoctorCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl: 'assets/img/doc-menN.png',
+                docName: 'Dr. Rajesh Malhotra',
+                positionName: 'Cardiologist',
+                imgUrl: 'assets/docImg/r-men_doc.jpg',
                 favAmount: 5,
                 commAmount: 60,
               ),

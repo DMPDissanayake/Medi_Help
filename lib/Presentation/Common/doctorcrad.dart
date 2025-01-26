@@ -56,7 +56,7 @@ class _DoctorCartState extends State<DoctorCart> {
                   color: kWhirt,
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       widget.docName,
