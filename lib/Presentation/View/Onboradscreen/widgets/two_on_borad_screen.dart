@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/mainbutton.dart';
-import 'package:project_medihelp/Presentation/View/LoginSigin/login_page.dart';
-import 'package:project_medihelp/Presentation/View/LoginSigin/sigin_page.dart';
+import 'package:project_medihelp/Presentation/View/Authentication/login_page.dart';
+import 'package:project_medihelp/Presentation/View/Authentication/sigin_page.dart';
 
 class TwoOnBoradScreen extends StatelessWidget {
   const TwoOnBoradScreen({super.key});

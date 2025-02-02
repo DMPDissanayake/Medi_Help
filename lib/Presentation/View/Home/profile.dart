@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/about_card.dart';
 import 'package:project_medihelp/Presentation/Common/detaile_card.dart';
+import 'package:project_medihelp/Presentation/View/Authentication/login_page.dart';
+import 'package:project_medihelp/Services/authentication_services.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -12,6 +14,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final Auth _auth = Auth();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +34,19 @@ class _ProfileState extends State<Profile> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(
-              Icons.logout,
-              size: 30,
-              color: kWhirt,
-            ),
-            onPressed: () {},
-          ),
+              icon: const Icon(
+                Icons.logout,
+                size: 30,
+                color: kWhirt,
+              ),
+              onPressed: () async {
+                await _auth.signOut();
+                Navigator.of(context).pop();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              }),
         ],
       ),
       body: Stack(

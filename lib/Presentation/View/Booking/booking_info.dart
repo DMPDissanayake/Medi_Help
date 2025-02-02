@@ -1,8 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
+import 'package:project_medihelp/Models/bookin.dart';
 import 'package:project_medihelp/Presentation/Common/mainbutton.dart';
 import 'package:project_medihelp/Presentation/View/Booking/confome_page.dart';
+import 'package:project_medihelp/Presentation/View/Booking/done_page.dart';
+import 'package:project_medihelp/Services/firestore.dart';
+import 'package:uuid/uuid.dart';
+import 'package:uuid/v4.dart';
 
 class BookingInfoPage extends StatefulWidget {
   const BookingInfoPage({super.key});
@@ -12,6 +18,8 @@ class BookingInfoPage extends StatefulWidget {
 }
 
 class _BookingInfoPageState extends State<BookingInfoPage> {
+  //set fireStore
+  final Firestore _firestore = Firestore();
   //form validation
   final _formKey = GlobalKey<FormState>();
   //form controller
@@ -24,13 +32,13 @@ class _BookingInfoPageState extends State<BookingInfoPage> {
   // Gender selection state
   String? _selectedGender; // "Male" or "Female"
 
+  // Date and Time selection state
+  DateTime? _setDate;
+  TimeOfDay? _setTime;
+
   // Email validation regex
   final RegExp emailRegex =
       RegExp(r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
-
-  //set date and time
-  DateTime _setDate = DateTime.now();
-  DateTime _setTime = DateTime.now();
 
   @override
   void dispose() {
@@ -40,6 +48,8 @@ class _BookingInfoPageState extends State<BookingInfoPage> {
     _emaiController.dispose();
     _problemController.dispose();
     _selectedGender = null;
+    _setDate = null;
+    _setTime = null;
     super.dispose();
   }
 
@@ -420,12 +430,7 @@ class _BookingInfoPageState extends State<BookingInfoPage> {
                                     ).then((onValue) {
                                       if (onValue != null) {
                                         setState(() {
-                                          _setTime = DateTime(
-                                              _setDate.year,
-                                              _setDate.month,
-                                              _setDate.day,
-                                              onValue.hour,
-                                              onValue.minute);
+                                          _setTime = onValue;
                                         });
                                       }
                                     });
@@ -472,18 +477,64 @@ class _BookingInfoPageState extends State<BookingInfoPage> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 50),
                             child: GestureDetector(
-                              onTap: () {
+                              onTap: () async {
                                 if (_formKey.currentState!.validate()) {
                                   String fullName = _nameController.text;
                                   String age = _ageController.text;
                                   String phoneNumber = _numberController.text;
                                   String email = _emaiController.text;
+                                  String problem = _problemController.text;
+                                  String gender = _selectedGender ?? '';
+                                  DateTime date = _setDate ?? DateTime.now();
+                                  TimeOfDay time = _setTime ?? TimeOfDay.now();
 
-                                  // Navigate to the confirmation page
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ConfomePage()));
+                                  // Convert TimeOfDay to a string
+                                  String formattedTime =
+                                      '${time.hour}:${time.minute}';
+
+                                  // Generate a default ID using Firestore's doc().id method
+                                  String bookingId = FirebaseFirestore.instance
+                                      .collection('bookings')
+                                      .doc()
+                                      .id;
+
+                                  //set  Booking
+                                  Booking setBooking = Booking(
+                                      bookingId: bookingId,
+                                      name: fullName,
+                                      age: age,
+                                      phoneNumber: phoneNumber,
+                                      email: email,
+                                      isMale: gender,
+                                      problem: problem,
+                                      date: date,
+                                      time: formattedTime);
+
+                                  try {
+                                    //save booking
+                                    await _firestore.addBooking(setBooking);
+                                    // Show a success message or navigate to another screen
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                            'Booking information saved successfully!'),
+                                      ),
+                                    );
+                                    //navigator
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ConfomePage()));
+                                  } catch (e) {
+                                    // Show error message
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content:
+                                            Text('Failed to add booking: $e'),
+                                      ),
+                                    );
+                                  }
                                 }
                               },
                               child: MainButton(

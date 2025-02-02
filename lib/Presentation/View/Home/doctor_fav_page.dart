@@ -68,61 +68,6 @@ class _DoctorFavPageState extends State<DoctorFavPage> {
                 commAmount: 60,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: DoctorFavCart(
-                docName: 'Dr. Meera Sinha',
-                positionName: 'Neurologist',
-                imgUrl:
-                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_43877ef0.jpg',
-                favAmount: 5,
-                commAmount: 25,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: DoctorFavCart(
-                docName: 'Dr. Kavita Deshmukh',
-                positionName: 'Oncologist',
-                imgUrl:
-                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.44_a04e7677.jpg',
-                favAmount: 5,
-                commAmount: 35,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: DoctorFavCart(
-                docName: 'Dr. Sameer Gupta',
-                positionName: 'Pediatrician',
-                imgUrl:
-                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.45_b03a7d7f.jpg',
-                favAmount: 5,
-                commAmount: 10,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: DoctorFavCart(
-                docName: 'Dr. Priya Kapoor',
-                positionName: 'Dermatologist',
-                imgUrl:
-                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.47_19b46847.jpg',
-                favAmount: 5,
-                commAmount: 5,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: DoctorFavCart(
-                docName: 'Dr. Alexander Bennett, Ph.D.',
-                positionName: 'Dermato-Genetics',
-                imgUrl:
-                    'assets/docImg/WhatsApp Image 2025-01-26 at 04.05.47_c011261c.jpg',
-                favAmount: 5,
-                commAmount: 9,
-              ),
-            ),
           ],
         ),
       ),

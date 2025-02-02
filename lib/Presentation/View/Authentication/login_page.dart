@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/mainbutton.dart';
-import 'package:project_medihelp/Presentation/View/LoginSigin/sigin_page.dart';
+import 'package:project_medihelp/Presentation/View/Authentication/sigin_page.dart';
+import 'package:project_medihelp/Presentation/View/Home/home_main.dart';
+import 'package:project_medihelp/Services/authentication_services.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,6 +14,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  //SetAuthentication
+  final Auth _auth = Auth();
   //set check box
   bool _rememberMe = false;
   bool _rememberMeError = false;
@@ -224,6 +228,21 @@ class _LoginPageState extends State<LoginPage> {
                                     //submit data
                                     String email = _emailController.text;
                                     String password = _passwordController.text;
+
+                                    //check the submit data
+                                    dynamic result =
+                                        await _auth.signInWithEmailAndPassword(
+                                            email, password);
+                                    if (result == null) {
+                                      print("Error");
+                                    } else {
+                                      print("Success");
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  HomeMain()));
+                                    }
                                   }
                                 },
                                 child: MainButton(

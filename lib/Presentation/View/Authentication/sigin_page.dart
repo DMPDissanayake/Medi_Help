@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/mainbutton.dart';
-import 'package:project_medihelp/Presentation/View/LoginSigin/login_page.dart';
+import 'package:project_medihelp/Presentation/View/Authentication/login_page.dart';
+import 'package:project_medihelp/Presentation/View/Home/home_main.dart';
+import 'package:project_medihelp/Services/authentication_services.dart';
 
 class SiginPage extends StatefulWidget {
   const SiginPage({super.key});
@@ -12,6 +14,8 @@ class SiginPage extends StatefulWidget {
 }
 
 class _SiginPageState extends State<SiginPage> {
+  //Authontication
+  final Auth _auth = Auth();
   //set check box
   bool _rememberMe = false;
   bool _rememberMeError = false;
@@ -358,14 +362,18 @@ class _SiginPageState extends State<SiginPage> {
                                   return;
                                 } else {
                                   //Registation
-                                  // dynamic result =
-                                  //     _auth.registerWithEmailAndPassword(
-                                  //         email, password);
-                                  // if (result == null) {
-                                  //   print("Error in signup");
-                                  // } else {
-                                  //   print("User signed up");
-                                  // }
+                                  dynamic result =
+                                      _auth.createUserWithEmailAndPassword(
+                                          email, password);
+                                  if (result == null) {
+                                    print("Error in signup");
+                                  } else {
+                                    print("User signed up");
+                                  }
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeMain()));
                                 }
                               }
                             },
