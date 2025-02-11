@@ -45,7 +45,7 @@ class NewsPage extends StatelessWidget {
               height: 15,
             ),
             //serach
-            SearchWidget(),
+            //SearchWidget(),
           ],
         ),
       ),

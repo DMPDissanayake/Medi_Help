@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
+import 'package:project_medihelp/Models/doctor.dart';
 import 'package:project_medihelp/Presentation/View/Booking/booking_info.dart';
 import 'package:project_medihelp/Presentation/View/Home/home.dart';
+import 'package:project_medihelp/Provider/doctor_provider.dart';
 
 class DoctorInforPage extends StatefulWidget {
-  const DoctorInforPage({super.key});
+  final Doctor doctor;
+  const DoctorInforPage({
+    super.key,
+    required this.doctor,
+  });
 
   @override
   State<DoctorInforPage> createState() => _DoctorInforPageState();
@@ -59,7 +65,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(100),
                             child: Image.asset(
-                              "assets/docImg/r-men_doc.jpg",
+                              widget.doctor.docImg,
                               width: 160,
                               fit: BoxFit.cover,
                             ),
@@ -97,7 +103,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            "15 years",
+                                            "${widget.doctor.expeYesr} years",
                                             style: TextStyle(
                                               color: kWhirt,
                                               fontSize: 15,
@@ -131,7 +137,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                   padding: const EdgeInsets.all(20),
                                   child: Center(
                                     child: Text(
-                                      "Heart conditions such as coronary artery disease, hypertension, arrhythmias, and heart failure.",
+                                      widget.doctor.shortDescription,
                                       style: GoogleFonts.prata(
                                         textStyle: TextStyle(
                                           color: kWhirt,
@@ -164,7 +170,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                             child: Column(
                               children: [
                                 Text(
-                                  "Dr. Rajesh Malhotra",
+                                  widget.doctor.docName,
                                   style: GoogleFonts.prata(
                                     textStyle: TextStyle(
                                       color: kMainColor,
@@ -174,7 +180,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                   ),
                                 ),
                                 Text(
-                                  "Cardiologist",
+                                  widget.doctor.catagory,
                                   style: TextStyle(
                                     color: kBlack,
                                     fontSize: 14,
@@ -208,7 +214,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                     color: kMainColor,
                                   ),
                                   Text(
-                                    "5",
+                                    widget.doctor.startMark.toString(),
                                     style: TextStyle(
                                       color: kMainColor,
                                       fontSize: 15,
@@ -230,11 +236,11 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                 children: [
                                   Icon(
                                     Icons.message,
-                                    size: 20,
+                                    size: 15,
                                     color: kMainColor,
                                   ),
                                   Text(
-                                    "5",
+                                    widget.doctor.comments.toString(),
                                     style: TextStyle(
                                       color: kMainColor,
                                       fontSize: 15,
@@ -263,10 +269,10 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                                     width: 10,
                                   ),
                                   Text(
-                                    "Mon-Sat / 9:00AM - 5:00PM",
+                                    widget.doctor.workTime,
                                     style: TextStyle(
                                       color: kMainColor,
-                                      fontSize: 15,
+                                      fontSize: 14,
                                     ),
                                   ),
                                 ],
@@ -348,7 +354,7 @@ class _DoctorInforPageState extends State<DoctorInforPage> {
                     height: 10,
                   ),
                   Text(
-                    "Dr. Rajesh Malhotra is a highly experienced cardiologist specializing in the diagnosis and treatment of heart conditions such as coronary artery disease, hypertension, arrhythmias, and heart failure. With over 15 years of experience, he is known for his expertise in interventional cardiology, including angioplasty and pacemaker implantation. Dr. Malhotra holds an MBBS, MD (Internal Medicine), and DM (Cardiology) and is a Fellow of the American College of Cardiology (FACC). His contributions to cardiovascular research include over 20 published papers in renowned medical journals.",
+                    widget.doctor.description,
                     style: TextStyle(
                       color: kBlack,
                       fontSize: 15,

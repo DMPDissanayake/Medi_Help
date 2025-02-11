@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
+import 'package:project_medihelp/Models/bookin.dart'; // Import Booking model
 
 class BookingDetailsCard extends StatelessWidget {
-  const BookingDetailsCard({super.key});
+  final Booking booking; // Accept Booking data
+
+  const BookingDetailsCard({super.key, required this.booking});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class BookingDetailsCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "another person",
+                  "Self", // Change if you allow another person booking
                   style: GoogleFonts.prata(
                     textStyle: TextStyle(
                         color: kWhirt,
@@ -40,9 +43,7 @@ class BookingDetailsCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 5,
-            ),
+            SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,7 +57,7 @@ class BookingDetailsCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Dissanayake",
+                  booking.name, // Display actual name
                   style: GoogleFonts.prata(
                     textStyle: TextStyle(
                         color: kWhirt,
@@ -66,9 +67,7 @@ class BookingDetailsCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 5,
-            ),
+            SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -82,7 +81,7 @@ class BookingDetailsCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "078 6611123",
+                  booking.phoneNumber, // Display actual phone number
                   style: GoogleFonts.prata(
                     textStyle: TextStyle(
                         color: kWhirt,
@@ -92,9 +91,7 @@ class BookingDetailsCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 5,
-            ),
+            SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -108,7 +105,7 @@ class BookingDetailsCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "12abcd@gmail.com",
+                  booking.email, // Display actual email
                   style: GoogleFonts.prata(
                     textStyle: TextStyle(
                         color: kWhirt,
@@ -118,9 +115,7 @@ class BookingDetailsCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 5,
-            ),
+            SizedBox(height: 5),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -134,7 +129,7 @@ class BookingDetailsCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "female",
+                  booking.isMale ? "Male" : "Female", // Display actual gender
                   style: GoogleFonts.prata(
                     textStyle: TextStyle(
                         color: kWhirt,

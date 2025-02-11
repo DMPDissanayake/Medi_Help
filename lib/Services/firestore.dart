@@ -1,20 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:project_medihelp/Models/bookin.dart';
 
-class Firestore {
+class FirestoreService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final CollectionReference bookingCollection =
-      FirebaseFirestore.instance.collection('bookingCollection');
 
-  // Add a booking
+  //add Booking
   Future<void> addBooking(Booking booking) async {
-    try {
-      await bookingCollection
-          .doc(booking.bookingId.toString())
-          .set(booking.toJson());
-      print("Booking added successfully!");
-    } catch (e) {
-      print("Error adding booking: $e");
-    }
+    await _firestore.collection('bookings').doc(booking.bookingId).set({
+      'name': booking.name,
+      'age': booking.age,
+      'phoneNumber': booking.phoneNumber,
+      'email': booking.email,
+      'gender': booking.isMale,
+      'problem': booking.problem,
+      'date': booking.date,
+      'time': booking.time,
+    });
   }
+
+  //Read booking
 }
