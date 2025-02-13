@@ -1,53 +1,77 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:project_medihelp/Constant/colors.dart';
 import 'package:project_medihelp/Presentation/Common/about_card.dart';
 import 'package:project_medihelp/Presentation/Common/detaile_card.dart';
-import 'package:project_medihelp/Presentation/View/Authentication/login_page.dart';
+import 'package:project_medihelp/Presentation/View/Onboradscreen/on_borad_screen.dart';
 import 'package:project_medihelp/Services/authentication_services.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfilePageState extends State<ProfilePage> {
   final Auth _auth = Auth();
+
+  void _confirmLogout() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text("Logout"),
+          content: Text("Are you sure you want to log out?"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text("No", style: TextStyle(color: kBlack)),
+            ),
+            TextButton(
+              onPressed: () async {
+                await _auth.signOut();
+                Navigator.of(context).pop();
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => OnBoradScreen()),
+                );
+              },
+              child: Text("Yes", style: TextStyle(color: Colors.red)),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kMainColor,
       appBar: AppBar(
-        backgroundColor: kMainColor,
-        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Text(
-          "Profile",
-          style: GoogleFonts.prata(
-            textStyle: TextStyle(
-              color: kWhirt,
-              fontWeight: FontWeight.w600,
-              fontSize: 20,
-            ),
+          'My Account',
+          style: TextStyle(
+            color: kWhirt,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
         actions: [
           IconButton(
-              icon: const Icon(
-                Icons.logout,
-                size: 30,
-                color: kWhirt,
-              ),
-              onPressed: () async {
-                await _auth.signOut();
-                Navigator.of(context).pop();
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                );
-              }),
+            icon: const Icon(
+              Icons.logout,
+              size: 30,
+              color: kWhirt,
+            ),
+            onPressed: _confirmLogout,
+          ),
         ],
+        automaticallyImplyLeading: false,
+        backgroundColor: kSubTitleColor,
       ),
       body: Stack(
         children: [
@@ -77,7 +101,7 @@ class _ProfileState extends State<Profile> {
               ),
               const SizedBox(height: 10),
               Text(
-                "Kaushalya Dissanayake",
+                "Kaushalya",
                 style: TextStyle(
                   color: kBlack,
                   fontSize: 22,
@@ -89,16 +113,16 @@ class _ProfileState extends State<Profile> {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: AboutCard(
                   aboutText:
-                      "The fourth person, also a man, is farther to the right, walking away from the stop. He appears to have a backpack, and is wearing a light-colored top and light-colored jeans.  A light pole is positioned to the left of the shelter structure, and the background shows small greenery and a light-blue sky with a few clouds.",
+                      "This is a description of the user and their profile information.",
                 ),
               ),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: DetaileCard(
-                  name: "Kaushalya Dissanayake",
-                  email: "kaudissanayke@gmail.com",
-                  phone: "071 4455693",
+                  name: "Kaushalya",
+                  email: "ku12dissanayake@gmail.com",
+                  phone: "071 1111111",
                 ),
               ),
             ],

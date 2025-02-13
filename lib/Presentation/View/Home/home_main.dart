@@ -18,7 +18,7 @@ class _HomeMainState extends State<HomeMain> {
   final List<Widget> _pages = [
     const Home(),
     const Schedule(),
-    const Profile(),
+    const ProfilePage(),
   ];
 
   @override
